@@ -1,7 +1,10 @@
 html * {
-    font-size: 1.5em;
+    font-size: 1em;
     color: #333;
     font-family: Helvetica;
+    }
+
+p, a {
     margin-left: 100px;
     margin-top: 61.803398875px;
     width: 700px;
