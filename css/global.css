@@ -4,22 +4,41 @@ html * {
     font-family: Helvetica;
 }
 
-p, div {
+.intro {
     margin-left: 100px;
     margin-top: 61.803398875px;
-    width: 700px;
-    display: inline-block;
 }
 
-a {
-    font-size: 0.9em;
+
+.gallery {
+    margin-left: 100px;
+    margin-top: 61.803398875px;
+    width: 1000px;
+    column-count: 3;
+    column-gap: 0;
+}
+
+.paintings {
+    float: left;
+    width: 100%;
 }
 
 @media only screen and (max-width: 600px) {
-  p, div {
-      font-size: 0.9em;
-      margin-left: 6.1803398875px;
-      margin-top: 50px;
-      width: auto;
-  }
+
+    html * {
+        font-size: 1.1em;
+    }
+
+    .intro {
+        margin-left: 6.1803398875px;
+        margin-top: 50px;
+    }
+    
+    .gallery {
+        margin-left: 6.1803398875px;
+        margin-top: 50px;
+        width: auto;
+        column-count: 2;
+    }
+
 }
