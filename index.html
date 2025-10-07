@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tomo Ueda</title>
+  <meta name="description" content="Tomo Ueda — software engineer. Projects, writing, and links." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta property="og:title" content="Tomo Ueda" />
+  <meta property="og:description" content="Software engineer. Projects, writing, links." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tomoueda.com" />
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    :root{
+      --bg: #0b0b0c;
+      --fg: #e7e7ea;
+      --muted: #9aa0a6;
+      --card: #121214;
+      --accent: #8ab4f8;
+      --ring: #2a66ff33;
+      --maxw: 820px;
+      --radius: 16px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{--bg:#ffffff;--fg:#0b0b0c;--muted:#5f6368;--card:#f6f7f9;--accent:#1a73e8;--ring:#1a73e81f}
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background:var(--bg);
+      color:var(--fg);
+      display:flex; 
+      align-items:center; 
+      justify-content:center;
+      padding: 24px;
+    }
+    .wrap{width:100%; max-width:var(--maxw)}
+    .card{
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0,0,0,.2);
+      padding: clamp(20px, 4vw, 40px);
+      outline: 0 solid transparent;
+    }
+    .card:focus-within{ outline: 4px solid var(--ring); }
+    header{display:flex; gap:16px; align-items:center; margin-bottom: 24px}
+    .avatar{
+      width:64px; height:64px; border-radius:50%; background:linear-gradient(120deg,#444,#222);
+      display:grid; place-items:center; color:#fff; font-weight:700; letter-spacing:.5px
+    }
+    h1{margin:0; font-size:clamp(28px, 4.5vw, 40px); line-height:1.1}
+    .subtitle{color:var(--muted); margin-top:4px}
+    .grid{display:grid; gap:16px; grid-template-columns: 1fr;}
+    @media(min-width:760px){ .grid{grid-template-columns: 1.1fr .9fr} }
+    section{background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.06); border-radius: 14px; padding:16px}
+    section h2{margin:0 0 8px; font-size: 14px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted)}
+    ul{list-style:none; padding:0; margin:0}
+    li+li{margin-top:10px}
+    a{color:var(--fg); text-decoration:none; border-bottom: 1px solid rgba(255,255,255,.14);}
+    a:hover{color:var(--accent); border-bottom-color: var(--accent)}
+    .links{display:flex; flex-wrap:wrap; gap:10px; margin-top: 10px}
+    .chip{
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.04);
+      padding: 8px 12px; border-radius:999px; text-decoration:none; display:inline-block;
+    }
+    .chip:hover{border-color: var(--accent); color: var(--accent)}
+    footer{margin-top: 20px; color: var(--muted); font-size: 14px; display:flex; justify-content:space-between; align-items:center}
+    code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="card" tabindex="-1">
+      <header>
+        <div class="avatar" aria-hidden="true">TU</div>
+        <div>
+          <h1>Tomo Ueda</h1>
+          <div class="subtitle">Software engineer — product‑focused, systems‑minded.</div>
+        </div>
+      </header>
+
+      <div class="grid">
+        <section>
+          <h2>Now</h2>
+          <ul>
+            <li>Building clean, resilient consumer features. Lately: pricing systems, growth mechanics, digital commerce.</li>
+            <li>Exploring <a href="https://github.com/tomoueda" rel="me">OSS</a>, systems design, and better developer ergonomics.</li>
+          </ul>
+          <div class="links">
+            <a class="chip" href="mailto:tueda14@gmail.com">Email</a>
+            <a class="chip" href="https://www.linkedin.com/in/tomo-ueda/" rel="me">LinkedIn</a>
+            <a class="chip" href="https://github.com/tomoueda" rel="me">GitHub</a>
+            <a class="chip" href="/resume" aria-label="Resume (placeholder)">Resume</a>
+          </div>
+        </section>
+
+        <section>
+          <h2>Selected</h2>
+          <ul>
+            <li><strong>Nameplates, Discord</strong> — new collectibles SKU; led eng delivery & shop UX overhaul.</li>
+            <li><strong>Price‑set & Localized Pricing</strong> — multi‑currency + 20+ country rollout.</li>
+            <li><strong>Nitro Growth</strong> — trials, referrals, and social proof experiments.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Writing</h2>
+          <ul>
+            <li><a href="#">System design: asking better questions</a></li>
+            <li><a href="#">Designing pricing primitives</a></li>
+            <li><a href="#">Notes on experiment velocity</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Links</h2>
+          <ul>
+            <li><a href="https://tomoueda.github.io">Blog (GitHub Pages)</a></li>
+            <li><a href="https://x.com" rel="me nofollow">Twitter/X (maybe)</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <footer>
+        <span>© <span id="y"></span> Tomo Ueda</span>
+        <span>Built with <code>vanilla&nbsp;HTML+CSS</code></span>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
