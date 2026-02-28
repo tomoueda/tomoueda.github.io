@@ -99,24 +99,18 @@
       list-style: none;
       margin: 0;
       padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      display: grid;
+      gap: 8px;
     }
     .links a {
-      display: inline-block;
-      padding: 10px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
       color: var(--ink);
       text-decoration: none;
-      transition: transform 180ms ease, border-color 180ms ease, color 180ms ease, background-color 180ms ease;
+      border-bottom: 1px solid transparent;
+      transition: border-color 180ms ease, color 180ms ease;
     }
     .links a:hover {
-      transform: translateY(-1px);
-      border-color: var(--accent);
       color: var(--accent);
-      background-color: rgba(95, 126, 114, 0.06);
+      border-color: var(--accent);
     }
     .current {
       margin: 0;
@@ -182,11 +176,9 @@
 
     <section class="grid">
       <article class="panel">
-        <h2>Links</h2>
+        <h2>Contact</h2>
         <ul class="links">
-          <li><a href="https://github.com/tomoueda" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="https://tomoueda.com" rel="noopener noreferrer">Website</a></li>
-          <li><a href="mailto:tomo@tomoueda.com">Email</a></li>
+          <li><a href="mailto:tueda14@gmail.com">tueda14@gmail.com</a></li>
         </ul>
       </article>
       <article class="panel">
