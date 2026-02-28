@@ -87,7 +87,22 @@
       color: var(--accent);
       border-color: var(--accent);
     }
+    .skills {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .skills img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      opacity: 0.9;
+    }
     .rail {
+      margin-top: 16px;
       padding-right: clamp(14px, 2vw, 20px);
       border-right: 1px solid rgba(28, 31, 32, 0.2);
     }
@@ -165,6 +180,12 @@
           </a>
         </li>
         <li><a href="https://www.linkedin.com/in/tomo-ueda/" target="_blank" rel="noopener noreferrer">linkedin.com/in/tomo-ueda</a></li>
+      </ul>
+      <ul class="skills" aria-label="Tech stack">
+        <li><img src="https://cdn.simpleicons.org/typescript/1c1f20" alt="TypeScript" loading="lazy" /></li>
+        <li><img src="https://cdn.simpleicons.org/python/1c1f20" alt="Python" loading="lazy" /></li>
+        <li><img src="https://cdn.simpleicons.org/react/1c1f20" alt="React" loading="lazy" /></li>
+        <li><img src="https://cdn.simpleicons.org/postgresql/1c1f20" alt="PostgreSQL" loading="lazy" /></li>
       </ul>
     </section>
 
