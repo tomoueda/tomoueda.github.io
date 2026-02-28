@@ -93,6 +93,17 @@
       border-bottom: 1px solid transparent;
       transition: border-color 180ms ease, color 180ms ease;
     }
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .contact-email img {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+      opacity: 0.9;
+    }
     .links a:hover {
       color: var(--accent);
       border-color: var(--accent);
@@ -169,7 +180,12 @@
     <section class="grid">
       <article class="panel">
         <ul class="links">
-          <li><a href="mailto:tueda14@gmail.com">tueda14@gmail.com</a></li>
+          <li>
+            <a class="contact-email" href="mailto:tueda14@gmail.com">
+              <img src="https://cdn.simpleicons.org/gmail/1c1f20" alt="Email icon" loading="lazy" />
+              <span>tueda14@gmail.com</span>
+            </a>
+          </li>
           <li><a href="https://www.linkedin.com/in/tomo-ueda/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/tomo-ueda/</a></li>
         </ul>
       </article>
