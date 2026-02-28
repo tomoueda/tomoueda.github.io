@@ -18,11 +18,8 @@
       --bg: #f8f7f4;
       --ink: #1c1f20;
       --muted: #727a80;
-      --line: #dfdcd4;
-      --panel: rgba(255, 255, 255, 0.5);
       --accent: #5f7e72;
-      --maxw: 900px;
-      --radius: 18px;
+      --maxw: 760px;
     }
     * {
       box-sizing: border-box;
@@ -46,31 +43,16 @@
       margin: 0 auto;
       animation: settle 650ms ease both;
     }
-    .hero {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      backdrop-filter: blur(6px);
-      padding: clamp(24px, 4vw, 44px);
-      box-shadow: 0 20px 42px rgba(17, 19, 21, 0.05);
-    }
     h1 {
       margin: 0;
-      font-size: clamp(28px, 5.5vw, 48px);
+      font-size: clamp(30px, 6vw, 54px);
       line-height: 1;
       letter-spacing: -0.025em;
     }
-    .grid {
-      margin-top: 24px;
+    .stack {
+      margin-top: clamp(28px, 5vw, 42px);
       display: grid;
-      gap: 16px;
-    }
-    .panel {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 24px;
-      animation: fade-up 550ms ease both;
+      gap: clamp(24px, 4vw, 36px);
     }
     .links {
       list-style: none;
@@ -106,7 +88,7 @@
       list-style: none;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px 14px;
+      gap: 14px 18px;
     }
     .company {
       display: flex;
@@ -122,15 +104,6 @@
       object-fit: contain;
       opacity: 0.9;
     }
-    footer {
-      margin-top: 30px;
-      text-align: center;
-      color: var(--muted);
-      font-family: "Space Mono", monospace;
-      font-size: 12px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
     @keyframes settle {
       from {
         opacity: 0;
@@ -141,35 +114,18 @@
         transform: translateY(0);
       }
     }
-    @keyframes fade-up {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    @media (min-width: 720px) {
-      .grid {
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 18px;
-      }
-      .panel:last-child {
-        animation-delay: 90ms;
+    @media (max-width: 560px) {
+      .companies {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <section class="hero">
-      <h1>Tomo Ueda</h1>
-    </section>
-
-    <section class="grid">
-      <article class="panel">
+    <h1>Tomo Ueda</h1>
+    <section class="stack">
+      <div>
         <ul class="links">
           <li>
             <a class="contact-email" href="mailto:tueda14@gmail.com">
@@ -179,8 +135,8 @@
           </li>
           <li><a href="https://www.linkedin.com/in/tomo-ueda/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/tomo-ueda/</a></li>
         </ul>
-      </article>
-      <article class="panel">
+      </div>
+      <div>
         <ul class="companies" aria-label="Companies I have worked at">
           <li class="company">
             <img src="https://cdn.simpleicons.org/notion/1c1f20" alt="Notion logo" loading="lazy" />
@@ -203,14 +159,8 @@
             <span>Uber</span>
           </li>
         </ul>
-      </article>
+      </div>
     </section>
-
-    <footer>&copy; <span id="year"></span> Tomo Ueda</footer>
   </main>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
