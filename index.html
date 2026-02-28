@@ -4,88 +4,204 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tomo Ueda</title>
-  <meta name="description" content="Tomo Ueda — software engineer. Projects, writing, and links." />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="description" content="Tomo Ueda - software engineer building thoughtful digital products." />
+  <meta name="theme-color" content="#0f1417" />
   <meta property="og:title" content="Tomo Ueda" />
-  <meta property="og:description" content="Software engineer. Projects, writing, links." />
+  <meta property="og:description" content="Software engineer building thoughtful digital products." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tomoueda.com" />
-  <meta name="color-scheme" content="light dark" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    :root{
-      --bg: #0b0b0c;
-      --fg: #e7e7ea;
-      --muted: #9aa0a6;
-      --card: #121214;
-      --accent: #8ab4f8;
-      --ring: #2a66ff33;
-      --maxw: 820px;
-      --radius: 16px;
+    :root {
+      --bg: #f7f5f2;
+      --ink: #111315;
+      --muted: #596067;
+      --line: #d6d0c7;
+      --panel: rgba(255, 255, 255, 0.62);
+      --accent: #0f6d53;
+      --maxw: 860px;
+      --radius: 20px;
     }
-    @media (prefers-color-scheme: light){
-      :root{--bg:#ffffff;--fg:#0b0b0c;--muted:#5f6368;--card:#f6f7f9;--accent:#1a73e8;--ring:#1a73e81f}
+    * {
+      box-sizing: border-box;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background:var(--bg);
-      color:var(--fg);
-      display:flex; 
-      align-items:center; 
-      justify-content:center;
-      padding: 24px;
+    html,
+    body {
+      min-height: 100%;
     }
-    .wrap{width:100%; max-width:var(--maxw)}
-    .card{
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,.06);
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 15%, #f0ece6 0%, transparent 45%),
+        radial-gradient(circle at 85% 100%, #e8efe9 0%, transparent 35%),
+        var(--bg);
+      padding: clamp(20px, 5vw, 64px) 20px;
+    }
+    .page {
+      width: min(var(--maxw), 100%);
+      margin: 0 auto;
+      animation: settle 700ms ease both;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      box-shadow: 0 10px 30px rgba(0,0,0,.2);
-      padding: clamp(20px, 4vw, 40px);
-      outline: 0 solid transparent;
+      backdrop-filter: blur(8px);
+      padding: clamp(26px, 4vw, 44px);
+      box-shadow: 0 24px 50px rgba(17, 19, 21, 0.08);
     }
-    .card:focus-within{ outline: 4px solid var(--ring); }
-    header{display:flex; gap:16px; align-items:center; margin-bottom: 24px}
-    .avatar{
-      width:64px; height:64px; border-radius:50%; background:linear-gradient(120deg,#444,#222);
-      display:grid; place-items:center; color:#fff; font-weight:700; letter-spacing:.5px
+    .eyebrow {
+      margin: 0;
+      font-family: "Space Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
-    h1{margin:0; font-size:clamp(28px, 4.5vw, 40px); line-height:1.1}
-    .subtitle{color:var(--muted); margin-top:4px}
-    .grid{display:grid; gap:16px; grid-template-columns: 1fr;}
-    @media(min-width:760px){ .grid{grid-template-columns: 1.1fr .9fr} }
-    section{background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.06); border-radius: 14px; padding:16px}
-    section h2{margin:0 0 8px; font-size: 14px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted)}
-    ul{list-style:none; padding:0; margin:0}
-    li+li{margin-top:10px}
-    a{color:var(--fg); text-decoration:none; border-bottom: 1px solid rgba(255,255,255,.14);}
-    a:hover{color:var(--accent); border-bottom-color: var(--accent)}
-    .links{display:flex; flex-wrap:wrap; gap:10px; margin-top: 10px}
-    .chip{
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.04);
-      padding: 8px 12px; border-radius:999px; text-decoration:none; display:inline-block;
+    h1 {
+      margin: 14px 0 14px;
+      font-size: clamp(34px, 8vw, 72px);
+      line-height: 0.96;
+      letter-spacing: -0.03em;
     }
-    .chip:hover{border-color: var(--accent); color: var(--accent)}
-    footer{margin-top: 20px; color: var(--muted); font-size: 14px; display:flex; justify-content:space-between; align-items:center}
-    code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    .lead {
+      margin: 0;
+      max-width: 52ch;
+      color: var(--muted);
+      font-size: clamp(16px, 2.5vw, 20px);
+      line-height: 1.55;
+    }
+    .grid {
+      margin-top: 18px;
+      display: grid;
+      gap: 14px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      animation: fade-up 550ms ease both;
+    }
+    .panel h2 {
+      margin: 0 0 12px;
+      font-size: 12px;
+      font-family: "Space Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+    .links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .links a {
+      display: inline-block;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      text-decoration: none;
+      transition: transform 180ms ease, border-color 180ms ease, color 180ms ease;
+    }
+    .links a:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .current {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+    }
+    .current b {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    footer {
+      margin-top: 20px;
+      text-align: center;
+      color: var(--muted);
+      font-family: "Space Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    @keyframes settle {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (min-width: 720px) {
+      .grid {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+      .panel:last-child {
+        animation-delay: 90ms;
+      }
+    }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <div class="card" tabindex="-1">
-      <header>
-        <div class="avatar" aria-hidden="true">TU</div>
-        <div>
-          <h1>Tomo Ueda</h1>
-        </div>
-      </header>
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">Tomo Ueda</p>
+      <h1>Minimal by intent. Built with craft.</h1>
+      <p class="lead">
+        I am a software engineer focused on clean products, clear systems, and thoughtful details.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <h2>Links</h2>
+        <ul class="links">
+          <li><a href="https://github.com/tomoueda" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://x.com/tomoueda" target="_blank" rel="noopener noreferrer">X</a></li>
+          <li><a href="mailto:hello@tomoueda.com">Email</a></li>
+        </ul>
+      </article>
+      <article class="panel">
+        <h2>Currently</h2>
+        <ul class="current">
+          <li><b>Shipping</b> polished web experiences.</li>
+          <li><b>Exploring</b> AI tooling and product design.</li>
+          <li><b>Writing</b> notes on engineering and craft.</li>
+        </ul>
+      </article>
+    </section>
+
+    <footer>&copy; <span id="year"></span> Tomo Ueda</footer>
   </main>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
