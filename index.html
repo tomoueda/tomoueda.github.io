@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tomo Ueda</title>
-  <meta name="description" content="Tomo Ueda - software engineer." />
+  <meta name="description" content="Tomo Ueda - projects and history." />
   <meta name="theme-color" content="#0f1417" />
   <meta property="og:title" content="Tomo Ueda" />
-  <meta property="og:description" content="Software engineer." />
+  <meta property="og:description" content="Projects and history." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tomoueda.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,10 +49,15 @@
       line-height: 1;
       letter-spacing: -0.025em;
     }
-    .stack {
-      margin-top: clamp(28px, 5vw, 42px);
+    .top-links {
+      margin-top: 18px;
+    }
+    .layout {
+      margin-top: clamp(30px, 6vw, 56px);
       display: grid;
-      gap: clamp(24px, 4vw, 36px);
+      grid-template-columns: 150px 1fr;
+      column-gap: clamp(18px, 4vw, 34px);
+      align-items: start;
     }
     .links {
       list-style: none;
@@ -82,13 +87,17 @@
       color: var(--accent);
       border-color: var(--accent);
     }
+    .rail {
+      padding-right: clamp(14px, 2vw, 20px);
+      border-right: 1px solid rgba(28, 31, 32, 0.2);
+    }
     .companies {
       margin: 0;
       padding: 0;
       list-style: none;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px 18px;
+      grid-template-columns: 1fr;
+      gap: 12px;
     }
     .company {
       display: flex;
@@ -104,6 +113,19 @@
       object-fit: contain;
       opacity: 0.9;
     }
+    .history {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--ink);
+      display: grid;
+      gap: 12px;
+    }
+    .history > li {
+      line-height: 1.5;
+    }
+    .history b {
+      font-weight: 700;
+    }
     @keyframes settle {
       from {
         opacity: 0;
@@ -115,8 +137,18 @@
       }
     }
     @media (max-width: 560px) {
-      .companies {
+      .layout {
         grid-template-columns: 1fr;
+        row-gap: 24px;
+      }
+      .rail {
+        border-right: 0;
+        border-bottom: 1px solid rgba(28, 31, 32, 0.2);
+        padding-right: 0;
+        padding-bottom: 18px;
+      }
+      .companies {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
   </style>
@@ -124,19 +156,20 @@
 <body>
   <main class="page">
     <h1>Tomo Ueda</h1>
-    <section class="stack">
-      <div>
-        <ul class="links">
-          <li>
-            <a class="contact-email" href="mailto:tueda14@gmail.com">
-              <img src="https://cdn.simpleicons.org/gmail/1c1f20" alt="Email icon" loading="lazy" />
-              <span>tueda14@gmail.com</span>
-            </a>
-          </li>
-          <li><a href="https://www.linkedin.com/in/tomo-ueda/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/tomo-ueda/</a></li>
-        </ul>
-      </div>
-      <div>
+    <section class="top-links">
+      <ul class="links">
+        <li>
+          <a class="contact-email" href="mailto:tueda14@gmail.com">
+            <img src="https://cdn.simpleicons.org/gmail/1c1f20" alt="Email icon" loading="lazy" />
+            <span>tueda14@gmail.com</span>
+          </a>
+        </li>
+        <li><a href="https://www.linkedin.com/in/tomo-ueda/" target="_blank" rel="noopener noreferrer">linkedin.com/in/tomo-ueda</a></li>
+      </ul>
+    </section>
+
+    <section class="layout">
+      <aside class="rail">
         <ul class="companies" aria-label="Companies I have worked at">
           <li class="company">
             <img src="https://cdn.simpleicons.org/notion/1c1f20" alt="Notion logo" loading="lazy" />
@@ -159,7 +192,16 @@
             <span>Uber</span>
           </li>
         </ul>
-      </div>
+      </aside>
+      <section>
+        <ul class="history" aria-label="Project history">
+          <li><b>Notion:</b> Current role; building and shipping product work (public profile shows Notion as current company).</li>
+          <li><b>Discord:</b> Led Nitro growth work across trials, promotions, referral systems, localized pricing rollout, and new monetization features.</li>
+          <li><b>Google:</b> Built tooling for data-center hardware test infrastructure, with output storage, visualization, and analysis workflows.</li>
+          <li><b>Uber Freight:</b> Founding engineer on shipper platform; improved pricing computation from ~20s to ~50ms user wait time.</li>
+          <li><b>Uber:</b> Built backtesting visualization tools for pricing algorithms and a geo-targeted emergency shutdown system for dynamic pricing.</li>
+        </ul>
+      </section>
     </section>
   </main>
 </body>
